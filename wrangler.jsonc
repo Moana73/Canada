@@ -1,0 +1,33 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "canada",
+  "main": "worker/index.ts",
+  "compatibility_date": "2025-09-01",
+  "observability": { "enabled": true },
+  // ダッシュボードで追加した変数をデプロイのたびに消さない
+  "keep_vars": true,
+
+  // フロントエンド（scripts/build.mjs の出力）を同じ Worker から配信
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application",
+    // /api と /auth だけ Worker を通し、それ以外は静的配信（Worker の実行回数を節約）
+    "run_worker_first": ["/api/*", "/auth/*"]
+  },
+
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "canada",
+      "database_id": "dd0e6bc5-2a88-4efa-bb9b-d855a13667bf",
+      "migrations_dir": "migrations"
+    }
+  ],
+
+  "vars": {
+    // tasks と同じ Google OAuth クライアント（承認済みリダイレクト URI に canada の /auth/callback を追加して使う）
+    "GOOGLE_CLIENT_ID": "830844111740-ger904k2b10a1odosvp7c1p1s6l6agl1.apps.googleusercontent.com"
+  }
+  // GOOGLE_CLIENT_SECRET と ALLOWED_EMAILS は Cloudflare のダッシュボード（または `npx wrangler secret put`）で登録する
+}
