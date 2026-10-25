@@ -14,6 +14,7 @@
   --danger: #ff3b30;
   --accent: #258a49;
   --accent-ink: #1c703b;
+  --card-line: rgba(37, 138, 73, 0.7);
 
   --glass-fill: linear-gradient(160deg, rgba(255, 255, 255, 0.74), rgba(255, 255, 255, 0.42));
   --glass-blur: blur(26px) saturate(185%);
@@ -335,4 +336,11 @@ textarea, input { font: inherit; color: inherit; -webkit-user-select: text; user
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
   .blob { animation: none; }
+}
+
+/* ---------- カードの緑の枠 ----------
+   レイアウトを動かさないよう outline を内側に引く（ガラスの縁のハイライトより手前に描かれる） */
+.cl-hero, .cl-next, .cl-memos, .cl-section, .login, .sk-row {
+  outline: 2px solid var(--card-line);
+  outline-offset: -2px;
 }
