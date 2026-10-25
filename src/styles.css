@@ -14,7 +14,9 @@
   --danger: #ff3b30;
   --accent: #258a49;
   --accent-ink: #1c703b;
-  --card-line: rgba(37, 138, 73, 0.7);
+  --rim-a: rgba(37, 138, 73, 0.9);
+  --rim-b: rgba(37, 138, 73, 0.2);
+  --rim-c: rgba(140, 196, 60, 0.75);
 
   --glass-fill: linear-gradient(160deg, rgba(255, 255, 255, 0.74), rgba(255, 255, 255, 0.42));
   --glass-blur: blur(26px) saturate(185%);
@@ -339,8 +341,9 @@ textarea, input { font: inherit; color: inherit; -webkit-user-select: text; user
 }
 
 /* ---------- カードの緑の枠 ----------
-   レイアウトを動かさないよう outline を内側に引く（ガラスの縁のハイライトより手前に描かれる） */
-.cl-hero, .cl-next, .cl-memos, .cl-section, .login, .sk-row {
-  outline: 2px solid var(--card-line);
-  outline-offset: -2px;
+   tasks のガラスの縁（.glass::before：光が当たる左上と右下が明るいグラデーションの輪）と同じ作りで、
+   白の代わりに緑〜黄緑で光らせる */
+.cl-hero::before, .cl-next::before, .cl-memos::before, .cl-section::before, .login::before, .sk-row::before {
+  padding: 1.5px;
+  background: linear-gradient(155deg, var(--rim-a), var(--rim-b) 35%, rgba(255, 255, 255, 0) 55%, var(--rim-c) 100%);
 }
