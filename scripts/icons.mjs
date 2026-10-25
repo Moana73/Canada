@@ -1,4 +1,4 @@
-// アプリアイコンを SVG から生成（オレンジの光の上にガラスのタイル、飛行機の軌跡とチェック）
+// アプリアイコンを SVG から生成（緑と黄緑の光の上にガラスのタイル、飛行機の軌跡とチェック）
 import sharp from 'sharp';
 import { mkdir, writeFile } from 'node:fs/promises';
 import { join, resolve } from 'node:path';
@@ -11,19 +11,19 @@ const svg = (pad = 0) => `
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#fff6ec"/><stop offset="1" stop-color="#ffe6cf"/>
+      <stop offset="0" stop-color="#f6fbf1"/><stop offset="1" stop-color="#e3f3d4"/>
     </linearGradient>
     <radialGradient id="b1" cx="0.2" cy="0.18" r="0.62">
-      <stop offset="0" stop-color="#ffa04d" stop-opacity=".8"/><stop offset="1" stop-color="#ffa04d" stop-opacity="0"/>
+      <stop offset="0" stop-color="#8fd6a0" stop-opacity=".8"/><stop offset="1" stop-color="#8fd6a0" stop-opacity="0"/>
     </radialGradient>
     <radialGradient id="b2" cx="0.86" cy="0.9" r="0.6">
-      <stop offset="0" stop-color="#ff8a5c" stop-opacity=".7"/><stop offset="1" stop-color="#ff8a5c" stop-opacity="0"/>
+      <stop offset="0" stop-color="#cbe87a" stop-opacity=".75"/><stop offset="1" stop-color="#cbe87a" stop-opacity="0"/>
     </radialGradient>
     <linearGradient id="glass" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0" stop-color="#ffffff" stop-opacity=".93"/><stop offset="1" stop-color="#ffffff" stop-opacity=".58"/>
     </linearGradient>
     <linearGradient id="ink" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#ff9a3c"/><stop offset="1" stop-color="#e25b0e"/>
+      <stop offset="0" stop-color="#5cc47e"/><stop offset="1" stop-color="#1f7f42"/>
     </linearGradient>
   </defs>
   <rect width="1024" height="1024" fill="url(#bg)"/>

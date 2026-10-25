@@ -1,7 +1,7 @@
 # canada
 
 カナダワーホリ（2027年4月1日 入国予定）でやらなければいけない手続きを、出発前から到着後・働き始めまで管理する自分専用の PWA。
-白ベースの Liquid Glass UI をオレンジで、Cloudflare Workers + D1、Google ログインのみ。
+白ベースの Liquid Glass UI に緑と黄緑の光（tasks と同じ漂う背景）、Cloudflare Workers + D1、Google ログインのみ。
 
 | 操作 | 動き |
 | --- | --- |

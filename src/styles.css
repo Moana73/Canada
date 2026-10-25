@@ -1,19 +1,19 @@
 /* ============================================================
-   canada — Liquid Glass（オレンジ）
+   canada — Liquid Glass（緑・黄緑）
    ============================================================ */
 :root {
   color-scheme: light;
-  --bg: #fff0e1;
+  --bg: #f3faee;
   --text: #0b0b10;
   --text-2: rgba(60, 60, 67, 0.62);
   --text-3: rgba(60, 60, 67, 0.36);
   --hair: rgba(0, 0, 0, 0.06);
 
   --todo: #8e8e93;
-  --done: #f07316;
+  --done: #258a49;
   --danger: #ff3b30;
-  --accent: #f07316;
-  --accent-ink: #b8530a;
+  --accent: #258a49;
+  --accent-ink: #1c703b;
 
   --glass-fill: linear-gradient(160deg, rgba(255, 255, 255, 0.74), rgba(255, 255, 255, 0.42));
   --glass-blur: blur(26px) saturate(185%);
@@ -55,11 +55,11 @@ textarea, input { font: inherit; color: inherit; -webkit-user-select: text; user
 #boot[hidden] { display: none; }
 
 /* ---------- 背景：ガラスの屈折が見えるよう淡い色の光をゆっくり漂わせる ---------- */
-.bg { position: fixed; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; background: #fff3e6; }
+.bg { position: fixed; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; background: #f6fbf1; }
 .blob { position: absolute; border-radius: 50%; filter: blur(48px); opacity: 0.95; will-change: transform; }
-.b1 { width: 70vmax; height: 70vmax; left: -25vmax; top: -30vmax; background: radial-gradient(circle, #ffa04d 0%, rgba(255, 160, 77, 0.42) 40%, transparent 68%); animation: drift1 26s ease-in-out infinite alternate; }
-.b2 { width: 60vmax; height: 60vmax; right: -25vmax; top: 20vh; background: radial-gradient(circle, #ffc46b 0%, rgba(255, 196, 107, 0.42) 40%, transparent 68%); animation: drift2 32s ease-in-out infinite alternate; }
-.b3 { width: 55vmax; height: 55vmax; left: -10vmax; bottom: -30vmax; background: radial-gradient(circle, #ff8a5c 0%, rgba(255, 138, 92, 0.4) 40%, transparent 68%); animation: drift3 29s ease-in-out infinite alternate; }
+.b1 { width: 70vmax; height: 70vmax; left: -25vmax; top: -30vmax; background: radial-gradient(circle, #9ad9a6 0%, rgba(154, 217, 166, 0.38) 40%, transparent 68%); animation: drift1 26s ease-in-out infinite alternate; }
+.b2 { width: 60vmax; height: 60vmax; right: -25vmax; top: 20vh; background: radial-gradient(circle, #d4ee8c 0%, rgba(212, 238, 140, 0.38) 40%, transparent 68%); animation: drift2 32s ease-in-out infinite alternate; }
+.b3 { width: 55vmax; height: 55vmax; left: -10vmax; bottom: -30vmax; background: radial-gradient(circle, #b6e693 0%, rgba(182, 230, 147, 0.36) 40%, transparent 68%); animation: drift3 29s ease-in-out infinite alternate; }
 @keyframes drift1 { to { transform: translate(12vmax, 10vmax) scale(1.08); } }
 @keyframes drift2 { to { transform: translate(-14vmax, 8vmax) scale(0.94); } }
 @keyframes drift3 { to { transform: translate(10vmax, -12vmax) scale(1.1); } }
@@ -122,7 +122,7 @@ textarea, input { font: inherit; color: inherit; -webkit-user-select: text; user
   margin-left: calc(-1 * var(--gutter-l));
   margin-right: calc(-1 * var(--gutter-r));
   padding: calc(env(safe-area-inset-top) + 10px) var(--gutter-r) 12px var(--gutter-l);
-  background: linear-gradient(to bottom, rgba(255, 243, 230, 0.92) 0%, rgba(255, 243, 230, 0.72) 70%, rgba(255, 243, 230, 0));
+  background: linear-gradient(to bottom, rgba(246, 251, 241, 0.92) 0%, rgba(246, 251, 241, 0.72) 70%, rgba(246, 251, 241, 0));
 }
 .bar { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
 
@@ -222,7 +222,7 @@ textarea, input { font: inherit; color: inherit; -webkit-user-select: text; user
 .grabber { position: relative; z-index: 3; width: 38px; height: 5px; border-radius: 3px; background: rgba(60, 60, 67, 0.25); margin: 0 auto 14px; }
 .sheet-inner { position: relative; z-index: 3; display: grid; gap: 14px; }
 .field { width: 100%; border: 0; outline: 0; border-radius: 16px; background: rgba(118, 118, 128, 0.08); padding: 13px 14px; font-size: 17px; line-height: 23px; resize: none; transition: background 0.25s, box-shadow 0.25s; }
-.field:focus { background: rgba(255, 255, 255, 0.95); box-shadow: 0 0 0 3px rgba(240, 115, 22, 0.22); }
+.field:focus { background: rgba(255, 255, 255, 0.95); box-shadow: 0 0 0 3px rgba(37, 138, 73, 0.22); }
 .field.title { font-weight: 600; }
 .row { display: flex; gap: 10px; }
 .btn { flex: 1; height: 50px; border-radius: 16px; font-size: 16px; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 8px; transition: transform 0.3s var(--spring), opacity 0.2s; }
@@ -255,7 +255,7 @@ textarea, input { font: inherit; color: inherit; -webkit-user-select: text; user
 .toast.out { animation: toastOut 0.3s var(--ease-out) forwards; }
 .toast span { position: relative; z-index: 3; min-width: 0; }
 .toast:not(:has(button)) { padding-right: 18px; }
-.toast button { position: relative; z-index: 3; height: 32px; padding: 0 14px; border-radius: 99px; background: rgba(240, 115, 22, 0.12); color: var(--accent-ink); font-weight: 700; font-size: 14px; }
+.toast button { position: relative; z-index: 3; height: 32px; padding: 0 14px; border-radius: 99px; background: rgba(37, 138, 73, 0.12); color: var(--accent-ink); font-weight: 700; font-size: 14px; }
 @keyframes toastIn { from { opacity: 0; transform: translate(-50%, 30px) scale(0.9); } }
 @keyframes toastOut { to { opacity: 0; transform: translate(-50%, 20px) scale(0.95); } }
 
